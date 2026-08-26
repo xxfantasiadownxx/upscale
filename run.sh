@@ -445,7 +445,7 @@ except Exception:
   # Poll in background, run compose in foreground so exit code is reliable
   POLL_SENTINEL="$BASE_DIR/.poll_active"
   touch "$POLL_SENTINEL"
-  poll_stage "$COMPOSE_LOG" "restore-ffmpeg-extract" "restore-upscale" "$i" "$FILENAME" "$POLL_SENTINEL" &
+  poll_stage "$COMPOSE_LOG" "anime-ffmpeg-extract" "anime-upscale" "$i" "$FILENAME" "$POLL_SENTINEL" &
   POLL_PID=$!
 
   run_compose "$BASE_DIR/docker-compose.yml" "upscale-general" "$COMPOSE_LOG"
